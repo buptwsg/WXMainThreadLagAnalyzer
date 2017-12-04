@@ -16,6 +16,12 @@
 		C6B89D2C1FD5018300AA1652 /* WXMainThreadLagAnalyzer.h in Headers */ = {isa = PBXBuildFile; fileRef = C6B89D2A1FD5018200AA1652 /* WXMainThreadLagAnalyzer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C6B89D2F1FD5018300AA1652 /* WXMainThreadLagAnalyzer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B89D281FD5018200AA1652 /* WXMainThreadLagAnalyzer.framework */; };
 		C6B89D301FD5018300AA1652 /* WXMainThreadLagAnalyzer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C6B89D281FD5018200AA1652 /* WXMainThreadLagAnalyzer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C6B89D3D1FD503F800AA1652 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C6B89D361FD503F800AA1652 /* LICENSE */; };
+		C6B89D3E1FD503F800AA1652 /* WXFpsLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = C6B89D381FD503F800AA1652 /* WXFpsLabel.h */; };
+		C6B89D3F1FD503F800AA1652 /* WXFpsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B89D391FD503F800AA1652 /* WXFpsLabel.m */; };
+		C6B89D401FD503F800AA1652 /* WXMainRunLoopMonitor.h in Headers */ = {isa = PBXBuildFile; fileRef = C6B89D3B1FD503F800AA1652 /* WXMainRunLoopMonitor.h */; };
+		C6B89D411FD503F800AA1652 /* WXMainRunLoopMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B89D3C1FD503F800AA1652 /* WXMainRunLoopMonitor.m */; };
+		C6B89D431FD51A8B00AA1652 /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B89D421FD51A8B00AA1652 /* CrashReporter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +62,12 @@
 		C6B89D281FD5018200AA1652 /* WXMainThreadLagAnalyzer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WXMainThreadLagAnalyzer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B89D2A1FD5018200AA1652 /* WXMainThreadLagAnalyzer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXMainThreadLagAnalyzer.h; sourceTree = "<group>"; };
 		C6B89D2B1FD5018200AA1652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6B89D361FD503F800AA1652 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C6B89D381FD503F800AA1652 /* WXFpsLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXFpsLabel.h; sourceTree = "<group>"; };
+		C6B89D391FD503F800AA1652 /* WXFpsLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXFpsLabel.m; sourceTree = "<group>"; };
+		C6B89D3B1FD503F800AA1652 /* WXMainRunLoopMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXMainRunLoopMonitor.h; sourceTree = "<group>"; };
+		C6B89D3C1FD503F800AA1652 /* WXMainRunLoopMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXMainRunLoopMonitor.m; sourceTree = "<group>"; };
+		C6B89D421FD51A8B00AA1652 /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CrashReporter.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B89D431FD51A8B00AA1652 /* CrashReporter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,10 +127,40 @@
 		C6B89D291FD5018200AA1652 /* WXMainThreadLagAnalyzer */ = {
 			isa = PBXGroup;
 			children = (
+				C6B89D421FD51A8B00AA1652 /* CrashReporter.framework */,
+				C6B89D351FD503F800AA1652 /* CPUUsage */,
+				C6B89D371FD503F800AA1652 /* FPS */,
+				C6B89D3A1FD503F800AA1652 /* RunLoopObserver */,
 				C6B89D2A1FD5018200AA1652 /* WXMainThreadLagAnalyzer.h */,
 				C6B89D2B1FD5018200AA1652 /* Info.plist */,
 			);
 			path = WXMainThreadLagAnalyzer;
+			sourceTree = "<group>";
+		};
+		C6B89D351FD503F800AA1652 /* CPUUsage */ = {
+			isa = PBXGroup;
+			children = (
+				C6B89D361FD503F800AA1652 /* LICENSE */,
+			);
+			path = CPUUsage;
+			sourceTree = "<group>";
+		};
+		C6B89D371FD503F800AA1652 /* FPS */ = {
+			isa = PBXGroup;
+			children = (
+				C6B89D381FD503F800AA1652 /* WXFpsLabel.h */,
+				C6B89D391FD503F800AA1652 /* WXFpsLabel.m */,
+			);
+			path = FPS;
+			sourceTree = "<group>";
+		};
+		C6B89D3A1FD503F800AA1652 /* RunLoopObserver */ = {
+			isa = PBXGroup;
+			children = (
+				C6B89D3B1FD503F800AA1652 /* WXMainRunLoopMonitor.h */,
+				C6B89D3C1FD503F800AA1652 /* WXMainRunLoopMonitor.m */,
+			);
+			path = RunLoopObserver;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +170,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B89D401FD503F800AA1652 /* WXMainRunLoopMonitor.h in Headers */,
+				C6B89D3E1FD503F800AA1652 /* WXFpsLabel.h in Headers */,
 				C6B89D2C1FD5018300AA1652 /* WXMainThreadLagAnalyzer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B89D3D1FD503F800AA1652 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +290,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B89D411FD503F800AA1652 /* WXMainRunLoopMonitor.m in Sources */,
+				C6B89D3F1FD503F800AA1652 /* WXFpsLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +436,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UX84S3N9CU;
 				INFOPLIST_FILE = WXMainThreadLagAnalyzerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.buptwsg.WXMainThreadLagAnalyzerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -402,6 +451,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UX84S3N9CU;
 				INFOPLIST_FILE = WXMainThreadLagAnalyzerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.buptwsg.WXMainThreadLagAnalyzerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -420,8 +470,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WXMainThreadLagAnalyzer",
+				);
 				INFOPLIST_FILE = WXMainThreadLagAnalyzer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.buptwsg.WXMainThreadLagAnalyzer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -443,8 +498,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WXMainThreadLagAnalyzer",
+				);
 				INFOPLIST_FILE = WXMainThreadLagAnalyzer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.buptwsg.WXMainThreadLagAnalyzer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
