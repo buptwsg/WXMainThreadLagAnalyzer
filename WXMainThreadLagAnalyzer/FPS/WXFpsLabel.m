@@ -8,8 +8,6 @@
 
 #import "WXFpsLabel.h"
 
-#define WXDefaultLabelSize CGSizeMake(55, 20)
-
 @interface WXFpsLabel ()
 
 @property (nonatomic, readwrite) NSUInteger fps;
@@ -23,10 +21,6 @@
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    if (frame.size.width == 0 && frame.size.height == 0) {
-        frame.size = WXDefaultLabelSize;
-    }
-    
     self = [super initWithFrame: frame];
     self.textAlignment = NSTextAlignmentLeft;
     self.backgroundColor = [UIColor clearColor];

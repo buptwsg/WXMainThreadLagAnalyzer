@@ -50,11 +50,14 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
     CFRunLoopRemoveObserver(CFRunLoopGetMain(), observer, kCFRunLoopCommonModes);
     CFRelease(observer);
     observer = NULL;
+    self.running = NO;
 }
 
 - (void)start {
     if (observer)
         return;
+    
+    self.running = YES;
     
     // 信号
     semaphore = dispatch_semaphore_create(0);

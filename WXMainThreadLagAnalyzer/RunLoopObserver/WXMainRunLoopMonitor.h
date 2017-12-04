@@ -12,6 +12,7 @@
 
 @property (nonatomic) NSUInteger lagCriteria;
 @property (nonatomic) NSUInteger lagTimes;
+@property (nonatomic, getter=isRunning) BOOL running;
 
 - (void)start;
 - (void)stop;
