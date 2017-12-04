@@ -10,7 +10,6 @@
 
 @interface WXFpsLabel ()
 
-@property (nonatomic, readwrite) NSUInteger fps;
 @property (strong, nonatomic) NSArray *textArray;
 
 @end
@@ -20,12 +19,8 @@
     CFTimeInterval _lastTime;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame: frame];
-    self.textAlignment = NSTextAlignmentLeft;
-    self.backgroundColor = [UIColor clearColor];
-    self.textColor = [UIColor whiteColor];
-    self.font = [UIFont systemFontOfSize: 14];
+- (void)awakeFromNib {
+    [super awakeFromNib];
     
     //预先创建好将要用到的字符串
     NSMutableArray *strArray = [NSMutableArray array];
@@ -35,8 +30,6 @@
     self.textArray = [strArray copy];
     
     self.text = self.textArray[0];
-    
-    return self;
 }
 
 #pragma mark - public methods
@@ -70,6 +63,11 @@
 }
 
 #pragma mark - private
+- (void)setFps:(NSUInteger)fps {
+    _fps = fps;
+    self.text = self.textArray[MIN(self.fps, 60)];
+}
+
 - (void)tick: (CADisplayLink*)link {
     if (0 == _lastTime) {
         _lastTime = link.timestamp;
@@ -77,7 +75,6 @@
     
     CFTimeInterval elapsedTime = link.timestamp - _lastTime;
     _lastTime = link.timestamp;
-    self.fps = 1 / elapsedTime;
-    self.text = self.textArray[(int)MIN(self.fps, 60)];
+    self.fps = ceil(1 / elapsedTime);
 }
 @end

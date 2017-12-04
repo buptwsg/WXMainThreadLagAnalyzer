@@ -59,7 +59,7 @@
 - (void)start {
     self.mainLoopMonitor = [[WXMainRunLoopMonitor alloc] init];
     
-    NSBundle *bundle = [NSBundle bundleForClass: [WXLagAnalyzerView class]];
+    NSBundle *bundle = [NSBundle bundleForClass: [self class]];
     self.analyzerView = [bundle loadNibNamed: @"WXLagAnalyzerView" owner: self options: nil][0];
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     CGRect frame = self.analyzerView.frame;
@@ -74,6 +74,7 @@
 - (IBAction)toggleFPS:(id)sender {
     if (self.analyzerView.fpsLabel.isRunning) {
         [self.analyzerView.fpsLabel stop];
+        self.analyzerView.fpsLabel.fps = 0;
     }
     else {
         [self.analyzerView.fpsLabel start];

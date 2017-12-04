@@ -10,7 +10,7 @@
 
 @interface WXFpsLabel : UILabel
 
-@property (nonatomic, readonly) NSUInteger fps;
+@property (nonatomic) NSUInteger fps;
 @property (nonatomic, readonly) BOOL isRunning;
 
 - (void)start;

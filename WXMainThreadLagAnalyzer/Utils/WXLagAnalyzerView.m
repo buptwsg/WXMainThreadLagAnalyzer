@@ -14,4 +14,18 @@
 
 @implementation WXLagAnalyzerView
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget: self action: @selector(handlePan:)];
+    [self addGestureRecognizer: panGesture];
+}
+
+- (void)handlePan: (UIPanGestureRecognizer*)panGesture {
+    CGPoint center = self.center;
+    CGPoint translation = [panGesture translationInView: self];
+    self.center = CGPointMake(center.x + translation.x, center.y + translation.y);
+    [panGesture setTranslation: CGPointZero inView: self];
+}
+
 @end
