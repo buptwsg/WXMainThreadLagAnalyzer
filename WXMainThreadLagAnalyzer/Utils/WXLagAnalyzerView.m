@@ -28,4 +28,6 @@
     [panGesture setTranslation: CGPointZero inView: self];
 }
 
+- (IBAction)clickAnalyzerView:(id)sender {
+}
 @end
