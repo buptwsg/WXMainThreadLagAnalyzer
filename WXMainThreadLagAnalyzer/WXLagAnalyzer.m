@@ -94,7 +94,7 @@
         return;
     }
     
-    NSString *fileName = [NSString stringWithFormat: @"crash_%@", [NSDate date]];
+    NSString *fileName = [NSString stringWithFormat: @"crash_%@.crash", [NSDate date]];
     NSString *filePath = [folder stringByAppendingPathComponent: fileName];
     [report writeToFile: filePath atomically: YES encoding: NSUTF8StringEncoding error: nil];
     
