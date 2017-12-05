@@ -10,6 +10,7 @@
 #import "WXFpsLabel.h"
 #import "WXMainRunLoopMonitor.h"
 #import "WXLagAnalyzerView.h"
+#import "WXLagAnalyzerConstants.h"
 
 @implementation WXLagAnalyzerConfig
 @end
@@ -46,8 +47,8 @@
     WXLagAnalyzer *analyzer = [self sharedInstance];
     if (nil == config) {
         config = [[WXLagAnalyzerConfig alloc] init];
-        config.lagCriteria = 50;
-        config.lagTimes = 5;
+        config.lagCriteria = 40;
+        config.lagTimes = 2;
         config.maxNumberOfCrashReports = 5;
         config.checkDuplicate = NO;
         config.enableInReleaseBuild = NO;
@@ -57,32 +58,37 @@
 }
 
 - (void)start {
+    //create main run loop monitor
     self.mainLoopMonitor = [[WXMainRunLoopMonitor alloc] init];
+    self.mainLoopMonitor.lagCriteria = self.config.lagCriteria;
+    self.mainLoopMonitor.lagTimes = self.config.lagTimes;
     
+    //create analyzer view, which contains FPS label
     NSBundle *bundle = [NSBundle bundleForClass: [self class]];
     self.analyzerView = [bundle loadNibNamed: @"WXLagAnalyzerView" owner: self options: nil][0];
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     CGRect frame = self.analyzerView.frame;
     self.analyzerView.frame = CGRectMake(screenSize.width - frame.size.width - 4, 20, frame.size.width, frame.size.height);
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [[[UIApplication sharedApplication] keyWindow] addSubview: self.analyzerView];
-    });
-}
-
-#pragma mark - Save Report
-- (NSString*)crashReportFolder {
-    NSString *libraryFolder = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES)[0];
-    return [libraryFolder stringByAppendingPathComponent: @"CrashReports"];
-}
-
-- (void)saveCrashReport:(NSString *)report {
-    NSString *folder = [self crashReportFolder];
+    [[[UIApplication sharedApplication] keyWindow] addSubview: self.analyzerView];
+    
+    //create crash reports folder
+    NSString *folder = crashReportFolder();
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if (![fileManager fileExistsAtPath: folder]) {
         [fileManager createDirectoryAtPath: folder withIntermediateDirectories: YES attributes: nil error: nil];
     }
     
+    NSArray *files = [fileManager contentsOfDirectoryAtPath: folder error: nil];
+    if (files.count > self.config.maxNumberOfCrashReports) {
+        self.analyzerView.backgroundColor = [UIColor redColor];
+    }
+}
+
+#pragma mark - Save Report
+- (void)saveCrashReport:(NSString *)report {
+    NSString *folder = crashReportFolder();
+    NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *filesArray = [fileManager contentsOfDirectoryAtPath: folder error: nil];
     if (filesArray.count > self.config.maxNumberOfCrashReports) {
         return;

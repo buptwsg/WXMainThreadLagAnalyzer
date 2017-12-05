@@ -18,7 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [WXLagAnalyzer startWithConfig: nil];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [WXLagAnalyzer startWithConfig: nil];
+    });
+    
     return YES;
 }
 

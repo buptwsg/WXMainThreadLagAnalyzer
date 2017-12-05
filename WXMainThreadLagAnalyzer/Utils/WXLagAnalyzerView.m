@@ -29,5 +29,12 @@
 }
 
 - (IBAction)clickAnalyzerView:(id)sender {
+    if (self.backgroundColor == [UIColor redColor]) {
+        NSBundle *bundle = [NSBundle bundleForClass: [self class]];
+        UIStoryboard *sb = [UIStoryboard storyboardWithName: @"WXCrashReportsList" bundle: bundle];
+        UIViewController *vc = [sb instantiateInitialViewController];
+        [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController: vc animated: YES completion: nil];
+    }
 }
+
 @end

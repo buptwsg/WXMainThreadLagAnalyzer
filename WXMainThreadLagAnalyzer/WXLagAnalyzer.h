@@ -41,6 +41,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WXLagAnalyzer : NSObject
 
+@property (nonatomic, readonly) BOOL canSaveReports;
+
 + (instancetype)sharedInstance;
 
 + (void)startWithConfig: (nullable WXLagAnalyzerConfig*)config;

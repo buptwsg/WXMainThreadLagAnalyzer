@@ -27,6 +27,14 @@
 		C6B89D4B1FD5437900AA1652 /* WXLagAnalyzerView.h in Headers */ = {isa = PBXBuildFile; fileRef = C6B89D491FD5437900AA1652 /* WXLagAnalyzerView.h */; };
 		C6B89D4C1FD5437900AA1652 /* WXLagAnalyzerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B89D4A1FD5437900AA1652 /* WXLagAnalyzerView.m */; };
 		C6B89D4E1FD5444700AA1652 /* WXLagAnalyzerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B89D4D1FD5444700AA1652 /* WXLagAnalyzerView.xib */; };
+		C6E6F3371FD6A47500BA8C73 /* WXCrashReportsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6E6F3361FD6A47500BA8C73 /* WXCrashReportsList.storyboard */; };
+		C6E6F33A1FD6A4B700BA8C73 /* WXCrashReportsList.h in Headers */ = {isa = PBXBuildFile; fileRef = C6E6F3381FD6A4B700BA8C73 /* WXCrashReportsList.h */; };
+		C6E6F33B1FD6A4B700BA8C73 /* WXCrashReportsList.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E6F3391FD6A4B700BA8C73 /* WXCrashReportsList.m */; };
+		C6E6F33E1FD6B00C00BA8C73 /* WXLagAnalyzerConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = C6E6F33C1FD6B00C00BA8C73 /* WXLagAnalyzerConstants.h */; };
+		C6E6F33F1FD6B00C00BA8C73 /* WXLagAnalyzerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E6F33D1FD6B00C00BA8C73 /* WXLagAnalyzerConstants.m */; };
+		C6E6F3411FD6B73600BA8C73 /* WXCrashReportViewer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6E6F3401FD6B73600BA8C73 /* WXCrashReportViewer.storyboard */; };
+		C6E6F3441FD6B75A00BA8C73 /* WXCrashReportViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = C6E6F3421FD6B75A00BA8C73 /* WXCrashReportViewer.h */; };
+		C6E6F3451FD6B75A00BA8C73 /* WXCrashReportViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E6F3431FD6B75A00BA8C73 /* WXCrashReportViewer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +86,14 @@
 		C6B89D491FD5437900AA1652 /* WXLagAnalyzerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXLagAnalyzerView.h; sourceTree = "<group>"; };
 		C6B89D4A1FD5437900AA1652 /* WXLagAnalyzerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXLagAnalyzerView.m; sourceTree = "<group>"; };
 		C6B89D4D1FD5444700AA1652 /* WXLagAnalyzerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WXLagAnalyzerView.xib; sourceTree = "<group>"; };
+		C6E6F3361FD6A47500BA8C73 /* WXCrashReportsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WXCrashReportsList.storyboard; sourceTree = "<group>"; };
+		C6E6F3381FD6A4B700BA8C73 /* WXCrashReportsList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXCrashReportsList.h; sourceTree = "<group>"; };
+		C6E6F3391FD6A4B700BA8C73 /* WXCrashReportsList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXCrashReportsList.m; sourceTree = "<group>"; };
+		C6E6F33C1FD6B00C00BA8C73 /* WXLagAnalyzerConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXLagAnalyzerConstants.h; sourceTree = "<group>"; };
+		C6E6F33D1FD6B00C00BA8C73 /* WXLagAnalyzerConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXLagAnalyzerConstants.m; sourceTree = "<group>"; };
+		C6E6F3401FD6B73600BA8C73 /* WXCrashReportViewer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WXCrashReportViewer.storyboard; sourceTree = "<group>"; };
+		C6E6F3421FD6B75A00BA8C73 /* WXCrashReportViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXCrashReportViewer.h; sourceTree = "<group>"; };
+		C6E6F3431FD6B75A00BA8C73 /* WXCrashReportViewer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXCrashReportViewer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +198,14 @@
 				C6B89D491FD5437900AA1652 /* WXLagAnalyzerView.h */,
 				C6B89D4A1FD5437900AA1652 /* WXLagAnalyzerView.m */,
 				C6B89D4D1FD5444700AA1652 /* WXLagAnalyzerView.xib */,
+				C6E6F3361FD6A47500BA8C73 /* WXCrashReportsList.storyboard */,
+				C6E6F3381FD6A4B700BA8C73 /* WXCrashReportsList.h */,
+				C6E6F3391FD6A4B700BA8C73 /* WXCrashReportsList.m */,
+				C6E6F33C1FD6B00C00BA8C73 /* WXLagAnalyzerConstants.h */,
+				C6E6F33D1FD6B00C00BA8C73 /* WXLagAnalyzerConstants.m */,
+				C6E6F3401FD6B73600BA8C73 /* WXCrashReportViewer.storyboard */,
+				C6E6F3421FD6B75A00BA8C73 /* WXCrashReportViewer.h */,
+				C6E6F3431FD6B75A00BA8C73 /* WXCrashReportViewer.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -194,8 +218,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6B89D4B1FD5437900AA1652 /* WXLagAnalyzerView.h in Headers */,
+				C6E6F3441FD6B75A00BA8C73 /* WXCrashReportViewer.h in Headers */,
 				C6B89D401FD503F800AA1652 /* WXMainRunLoopMonitor.h in Headers */,
+				C6E6F33E1FD6B00C00BA8C73 /* WXLagAnalyzerConstants.h in Headers */,
 				C6B89D3E1FD503F800AA1652 /* WXFpsLabel.h in Headers */,
+				C6E6F33A1FD6A4B700BA8C73 /* WXCrashReportsList.h in Headers */,
 				C6B89D471FD526BA00AA1652 /* WXLagAnalyzer.h in Headers */,
 				C6B89D2C1FD5018300AA1652 /* WXMainThreadLagAnalyzer.h in Headers */,
 			);
@@ -296,6 +323,8 @@
 			files = (
 				C6B89D4E1FD5444700AA1652 /* WXLagAnalyzerView.xib in Resources */,
 				C6B89D3D1FD503F800AA1652 /* LICENSE in Resources */,
+				C6E6F3371FD6A47500BA8C73 /* WXCrashReportsList.storyboard in Resources */,
+				C6E6F3411FD6B73600BA8C73 /* WXCrashReportViewer.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,8 +346,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6B89D411FD503F800AA1652 /* WXMainRunLoopMonitor.m in Sources */,
+				C6E6F33F1FD6B00C00BA8C73 /* WXLagAnalyzerConstants.m in Sources */,
 				C6B89D3F1FD503F800AA1652 /* WXFpsLabel.m in Sources */,
+				C6E6F3451FD6B75A00BA8C73 /* WXCrashReportViewer.m in Sources */,
 				C6B89D4C1FD5437900AA1652 /* WXLagAnalyzerView.m in Sources */,
+				C6E6F33B1FD6A4B700BA8C73 /* WXCrashReportsList.m in Sources */,
 				C6B89D481FD526BA00AA1652 /* WXLagAnalyzer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +494,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = UX84S3N9CU;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WXMainThreadLagAnalyzerDemo/Info.plist;

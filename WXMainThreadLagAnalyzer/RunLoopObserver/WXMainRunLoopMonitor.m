@@ -34,9 +34,6 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _lagCriteria = 50;
-        _lagTimes = 5;
-        
         PLCrashReporterConfig *config = [[PLCrashReporterConfig alloc] initWithSignalHandlerType: PLCrashReporterSignalHandlerTypeBSD
                                                                            symbolicationStrategy: PLCrashReporterSymbolicationStrategyAll];
         crashReporter = [[PLCrashReporter alloc] initWithConfiguration: config];
@@ -88,11 +85,14 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
                 if (activity == kCFRunLoopBeforeSources || activity == kCFRunLoopAfterWaiting) {
                     if (++timeoutCount < self.lagTimes)
                         continue;
-
-                    NSData *data = [crashReporter generateLiveReport];
-                    PLCrashReport *report = [[PLCrashReport alloc] initWithData: data error: nil];
-                    NSString *reportText = [PLCrashReportTextFormatter stringValueForCrashReport: report withTextFormat: PLCrashReportTextFormatiOS];
-                    [[WXLagAnalyzer sharedInstance] saveCrashReport: reportText];
+                    
+                    WXLagAnalyzer *analyzer = [WXLagAnalyzer sharedInstance];
+                    if (analyzer.canSaveReports) {
+                        NSData *data = [crashReporter generateLiveReport];
+                        PLCrashReport *report = [[PLCrashReport alloc] initWithData: data error: nil];
+                        NSString *reportText = [PLCrashReportTextFormatter stringValueForCrashReport: report withTextFormat: PLCrashReportTextFormatiOS];
+                        [analyzer saveCrashReport: reportText];
+                    }
                 }
             }
             else {
