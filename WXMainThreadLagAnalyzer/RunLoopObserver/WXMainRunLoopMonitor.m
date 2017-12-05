@@ -8,6 +8,7 @@
 
 #import <CrashReporter/CrashReporter.h>
 #import "WXMainRunLoopMonitor.h"
+#import "WXLagAnalyzer.h"
 
 @interface WXMainRunLoopMonitor() {
     int timeoutCount;
@@ -91,7 +92,7 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
                     NSData *data = [crashReporter generateLiveReport];
                     PLCrashReport *report = [[PLCrashReport alloc] initWithData: data error: nil];
                     NSString *reportText = [PLCrashReportTextFormatter stringValueForCrashReport: report withTextFormat: PLCrashReportTextFormatiOS];
-                    NSLog(@"------------\n%@\n------------", reportText);
+                    [[WXLagAnalyzer sharedInstance] saveCrashReport: reportText];
                 }
             }
             else {

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface WXLagAnalyzerConfig : NSObject
 
 /**
@@ -39,6 +41,12 @@
 
 @interface WXLagAnalyzer : NSObject
 
++ (instancetype)sharedInstance;
+
 + (void)startWithConfig: (nullable WXLagAnalyzerConfig*)config;
 
+- (void)saveCrashReport: (NSString*)report;
+
 @end
+
+NS_ASSUME_NONNULL_END

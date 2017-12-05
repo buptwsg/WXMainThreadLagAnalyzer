@@ -38,10 +38,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"cell" forIndexPath: indexPath];
     cell.imageView.image = [UIImage imageNamed: @"default_videoFace"];
     cell.textLabel.text = [NSString stringWithFormat: @"这是第%d行", (int)indexPath.row];
-    if (indexPath.row % 2 == 0) {
-        NSData *testData = [NSData dataWithContentsOfURL: [NSURL URLWithString: @"https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=3038023804,3612858515&fm=173&s=E51A82754EE827261C323ECC0300C0AC&w=218&h=146&img.JPEG"]];
-        testData = nil;
-    }
+    NSData *testData = [NSData dataWithContentsOfURL: [NSURL URLWithString: @"http://img3.imgtn.bdimg.com/it/u=3970566572,2979075971&fm=27&gp=0.jpg"]];
+    testData = nil;
     
     return cell;
 }

@@ -70,6 +70,33 @@
     });
 }
 
+#pragma mark - Save Report
+- (NSString*)crashReportFolder {
+    NSString *libraryFolder = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES)[0];
+    return [libraryFolder stringByAppendingPathComponent: @"CrashReports"];
+}
+
+- (void)saveCrashReport:(NSString *)report {
+    NSString *folder = [self crashReportFolder];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath: folder]) {
+        [fileManager createDirectoryAtPath: folder withIntermediateDirectories: YES attributes: nil error: nil];
+    }
+    
+    NSArray *filesArray = [fileManager contentsOfDirectoryAtPath: folder error: nil];
+    if (filesArray.count > self.config.maxNumberOfCrashReports) {
+        return;
+    }
+    
+    NSString *fileName = [NSString stringWithFormat: @"crash_%@", [NSDate date]];
+    NSString *filePath = [folder stringByAppendingPathComponent: fileName];
+    [report writeToFile: filePath atomically: YES encoding: NSUTF8StringEncoding error: nil];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+       self.analyzerView.backgroundColor = [UIColor redColor];
+    });
+}
+
 #pragma mark - Actions
 - (IBAction)toggleFPS:(id)sender {
     if (self.analyzerView.fpsLabel.isRunning) {
