@@ -24,7 +24,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -44,4 +43,9 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath: indexPath animated: YES];
+    NSArray *array = @[@1, @2, @3, @4];
+    NSLog(@"array[10] = %@", array[10]);
+}
 @end
