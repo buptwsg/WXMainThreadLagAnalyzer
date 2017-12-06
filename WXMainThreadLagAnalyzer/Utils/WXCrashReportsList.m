@@ -42,7 +42,9 @@
 }
 
 - (void)exit {
-    [self dismissViewControllerAnimated: YES completion: nil];
+    [self dismissViewControllerAnimated: YES completion:^{
+        [[NSNotificationCenter defaultCenter] postNotificationName: WXLagAnalyzerListDismissed object: nil];
+    }];
 }
 
 #pragma mark - UITableView
@@ -65,28 +67,25 @@
     [self.navigationController pushViewController: viewer animated: YES];
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-
-//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return UITableViewCellEditingStyleDelete;
-//}
-
 - (NSArray<UITableViewRowAction*> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewRowAction *delete = [UITableViewRowAction rowActionWithStyle: UITableViewRowActionStyleDestructive title: @"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-        [tableView endEditing: YES];
+        //remove file
+        NSString *filepath = [self.reportsFolder stringByAppendingPathComponent: self.crashReports[indexPath.row]];
+        [[NSFileManager defaultManager] removeItemAtPath: filepath error: nil];
+        
+        //remove from datasource and update table
+        [self.crashReports removeObjectAtIndex: indexPath.row];
+        [tableView beginUpdates];
+        [tableView deleteRowsAtIndexPaths: @[indexPath] withRowAnimation: UITableViewRowAnimationAutomatic];
+        [tableView endUpdates];
+        
+        if (0 == self.crashReports.count) {
+            [[NSNotificationCenter defaultCenter] postNotificationName: WXLagAnalyzerCrashAllRemoved object: nil];
+        }
     }];
     return @[delete];
 }
 
-- (NSString*)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return @"确认删除此条日志？";
-}
-
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (UITableViewCellEditingStyleDelete == editingStyle) {
-        [tableView deleteRowsAtIndexPaths: @[indexPath] withRowAnimation: UITableViewRowAnimationAutomatic];
-    }
 }
 @end

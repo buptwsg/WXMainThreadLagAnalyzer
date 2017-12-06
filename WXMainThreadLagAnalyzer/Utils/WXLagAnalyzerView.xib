@@ -66,6 +66,7 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="bgButton" destination="jK6-d4-hUb" id="pGx-zd-Kub"/>
                 <outlet property="fpsLabel" destination="e76-S7-BQ3" id="z38-FS-JPF"/>
             </connections>
             <point key="canvasLocation" x="-14" y="8"/>

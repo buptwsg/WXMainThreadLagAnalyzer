@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const WXLagAnalyzerListDismissed;
 
-NSString * crashReportFolder();
+extern NSString * const WXLagAnalyzerCrashAllRemoved;
+
+NSString * crashReportFolder(void);
 

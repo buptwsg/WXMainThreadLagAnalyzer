@@ -80,12 +80,22 @@
     }
     
     NSArray *files = [fileManager contentsOfDirectoryAtPath: folder error: nil];
-    if (files.count > self.config.maxNumberOfCrashReports) {
+    if (files.count >= self.config.maxNumberOfCrashReports) {
         self.analyzerView.backgroundColor = [UIColor redColor];
     }
 }
 
 #pragma mark - Save Report
+- (BOOL)canSaveReports {
+    NSError *error = nil;
+    NSArray *files = [[NSFileManager defaultManager] contentsOfDirectoryAtPath: crashReportFolder() error: &error];
+    if (!error) {
+        return files.count < self.config.maxNumberOfCrashReports;
+    }
+    
+    return NO;
+}
+
 - (void)saveCrashReport:(NSString *)report {
     NSString *folder = crashReportFolder();
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -94,7 +104,8 @@
         return;
     }
     
-    NSString *fileName = [NSString stringWithFormat: @"crash_%@.crash", [NSDate date]];
+    NSString *fileName = [NSString stringWithFormat: @"crash-%@.crash", [NSDate date]];
+    fileName = [fileName stringByReplacingOccurrencesOfString: @" " withString: @"-"];
     NSString *filePath = [folder stringByAppendingPathComponent: fileName];
     [report writeToFile: filePath atomically: YES encoding: NSUTF8StringEncoding error: nil];
     

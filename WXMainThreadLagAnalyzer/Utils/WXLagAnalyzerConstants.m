@@ -8,6 +8,10 @@
 
 #import "WXLagAnalyzerConstants.h"
 
+NSString * const WXLagAnalyzerListDismissed = @"WXLagAnalyzerListDismissed";
+
+NSString * const WXLagAnalyzerCrashAllRemoved = @"WXLagAnalyzerCrashAllRemoved";
+
 NSString * crashReportFolder() {
     NSString *libraryFolder = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES)[0];
     return [libraryFolder stringByAppendingPathComponent: @"CrashReports"];

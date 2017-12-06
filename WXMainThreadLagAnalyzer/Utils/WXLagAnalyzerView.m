@@ -7,8 +7,11 @@
 //
 
 #import "WXLagAnalyzerView.h"
+#import "WXLagAnalyzerConstants.h"
 
 @interface WXLagAnalyzerView ()
+
+@property (weak, nonatomic) IBOutlet UIButton *bgButton;
 
 @end
 
@@ -19,6 +22,9 @@
     
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget: self action: @selector(handlePan:)];
     [self addGestureRecognizer: panGesture];
+    
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(crashReportsListDismissed:) name: WXLagAnalyzerListDismissed object: nil];
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(crashReportsAllRemoved:) name: WXLagAnalyzerCrashAllRemoved object: nil];
 }
 
 - (void)handlePan: (UIPanGestureRecognizer*)panGesture {
@@ -34,7 +40,16 @@
         UIStoryboard *sb = [UIStoryboard storyboardWithName: @"WXCrashReportsList" bundle: bundle];
         UIViewController *vc = [sb instantiateInitialViewController];
         [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController: vc animated: YES completion: nil];
+        self.bgButton.enabled = NO;
     }
+}
+
+- (void)crashReportsListDismissed: (NSNotification*)notification {
+    self.bgButton.enabled = YES;
+}
+
+- (void)crashReportsAllRemoved: (NSNotification*)notification {
+    self.backgroundColor = [UIColor greenColor];
 }
 
 @end
