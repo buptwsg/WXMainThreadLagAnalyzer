@@ -37,7 +37,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: @"cell" forIndexPath: indexPath];
     cell.imageView.image = [UIImage imageNamed: @"default_videoFace"];
     cell.textLabel.text = [NSString stringWithFormat: @"这是第%d行", (int)indexPath.row];
-    NSData *testData = [NSData dataWithContentsOfURL: [NSURL URLWithString: @"http://img3.imgtn.bdimg.com/it/u=3970566572,2979075971&fm=27&gp=0.jpg"]];
+    NSData *testData = [NSData dataWithContentsOfURL: [NSURL URLWithString: @"http://www.jianshu.com/p/930d7f77df6c"]];
     testData = nil;
     
     return cell;

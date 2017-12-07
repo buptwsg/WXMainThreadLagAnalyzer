@@ -34,8 +34,8 @@ static void runLoopObserverCallBack(CFRunLoopObserverRef observer, CFRunLoopActi
 - (instancetype)init {
     self = [super init];
     if (self) {
-        PLCrashReporterConfig *config = [[PLCrashReporterConfig alloc] initWithSignalHandlerType: PLCrashReporterSignalHandlerTypeBSD
-                                                                           symbolicationStrategy: PLCrashReporterSymbolicationStrategyAll];
+        PLCrashReporterConfig *config = [[PLCrashReporterConfig alloc] initWithSignalHandlerType: PLCrashReporterSignalHandlerTypeMach
+                                                                           symbolicationStrategy: PLCrashReporterSymbolicationStrategyNone];
         crashReporter = [[PLCrashReporter alloc] initWithConfiguration: config];
     }
     return self;
