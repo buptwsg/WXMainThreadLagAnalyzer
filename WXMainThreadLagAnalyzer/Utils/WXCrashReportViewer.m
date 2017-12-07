@@ -36,7 +36,7 @@
     }
     
     //navigation bar right item
-    UIBarButtonItem *sendItem = [[UIBarButtonItem alloc] initWithTitle: @"AirDrop" style: UIBarButtonItemStylePlain target: self action: @selector(sendToMAC)];
+    UIBarButtonItem *sendItem = [[UIBarButtonItem alloc] initWithTitle: @"Send to PC" style: UIBarButtonItemStylePlain target: self action: @selector(sendToMAC)];
     self.navigationItem.rightBarButtonItem = sendItem;
 }
 
@@ -48,7 +48,7 @@
     NSURL *url = [NSURL fileURLWithPath: self.filepath];
     NSArray *items = @[url];
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems: items applicationActivities: nil];
-    activityVC.excludedActivityTypes = @[UIActivityTypePostToFlickr, UIActivityTypePostToWeibo, UIActivityTypeMessage, UIActivityTypeMail, UIActivityTypeCopyToPasteboard,
+    activityVC.excludedActivityTypes = @[UIActivityTypePostToFlickr, UIActivityTypePostToWeibo, UIActivityTypeMessage, UIActivityTypeCopyToPasteboard,
                                          UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll, UIActivityTypeAddToReadingList, UIActivityTypePostToVimeo,
                                          UIActivityTypePostToTencentWeibo, UIActivityTypePostToFacebook, UIActivityTypePostToTwitter];
     [self presentViewController: activityVC animated: YES completion: nil];
