@@ -239,6 +239,7 @@
 				C6B89D071FD5013800AA1652 /* Frameworks */,
 				C6B89D081FD5013800AA1652 /* Resources */,
 				C6B89D341FD5018300AA1652 /* Embed Frameworks */,
+				C6E6F3491FD9534300BA8C73 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -329,6 +330,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C6E6F3491FD9534300BA8C73 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "python ${PROJECT_DIR}/createdsym.py";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C6B89D061FD5013800AA1652 /* Sources */ = {
@@ -494,7 +511,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = UX84S3N9CU;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WXMainThreadLagAnalyzerDemo/Info.plist;
