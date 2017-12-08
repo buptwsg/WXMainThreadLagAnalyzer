@@ -35,6 +35,8 @@
 		C6E6F3411FD6B73600BA8C73 /* WXCrashReportViewer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6E6F3401FD6B73600BA8C73 /* WXCrashReportViewer.storyboard */; };
 		C6E6F3441FD6B75A00BA8C73 /* WXCrashReportViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = C6E6F3421FD6B75A00BA8C73 /* WXCrashReportViewer.h */; };
 		C6E6F3451FD6B75A00BA8C73 /* WXCrashReportViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E6F3431FD6B75A00BA8C73 /* WXCrashReportViewer.m */; };
+		C6E6F35D1FDA64F200BA8C73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E6F35C1FDA64F200BA8C73 /* main.m */; };
+		C6E6F3631FDA654200BA8C73 /* MHWDirectoryWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E6F3621FDA654200BA8C73 /* MHWDirectoryWatcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,15 @@
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6E6F3581FDA64F100BA8C73 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -94,6 +105,10 @@
 		C6E6F3401FD6B73600BA8C73 /* WXCrashReportViewer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WXCrashReportViewer.storyboard; sourceTree = "<group>"; };
 		C6E6F3421FD6B75A00BA8C73 /* WXCrashReportViewer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXCrashReportViewer.h; sourceTree = "<group>"; };
 		C6E6F3431FD6B75A00BA8C73 /* WXCrashReportViewer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXCrashReportViewer.m; sourceTree = "<group>"; };
+		C6E6F35A1FDA64F100BA8C73 /* CrashDirectoryWatcher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CrashDirectoryWatcher; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6E6F35C1FDA64F200BA8C73 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C6E6F3611FDA654200BA8C73 /* MHWDirectoryWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHWDirectoryWatcher.h; sourceTree = "<group>"; };
+		C6E6F3621FDA654200BA8C73 /* MHWDirectoryWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHWDirectoryWatcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +128,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C6E6F3571FDA64F100BA8C73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -121,6 +143,7 @@
 			children = (
 				C6B89D0C1FD5013800AA1652 /* WXMainThreadLagAnalyzerDemo */,
 				C6B89D291FD5018200AA1652 /* WXMainThreadLagAnalyzer */,
+				C6E6F35B1FDA64F200BA8C73 /* CrashDirectoryWatcher */,
 				C6B89D0B1FD5013800AA1652 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,6 +153,7 @@
 			children = (
 				C6B89D0A1FD5013800AA1652 /* WXMainThreadLagAnalyzerDemo.app */,
 				C6B89D281FD5018200AA1652 /* WXMainThreadLagAnalyzer.framework */,
+				C6E6F35A1FDA64F100BA8C73 /* CrashDirectoryWatcher */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,6 +234,16 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		C6E6F35B1FDA64F200BA8C73 /* CrashDirectoryWatcher */ = {
+			isa = PBXGroup;
+			children = (
+				C6E6F3611FDA654200BA8C73 /* MHWDirectoryWatcher.h */,
+				C6E6F3621FDA654200BA8C73 /* MHWDirectoryWatcher.m */,
+				C6E6F35C1FDA64F200BA8C73 /* main.m */,
+			);
+			path = CrashDirectoryWatcher;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -269,6 +303,23 @@
 			productReference = C6B89D281FD5018200AA1652 /* WXMainThreadLagAnalyzer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		C6E6F3591FDA64F100BA8C73 /* CrashDirectoryWatcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6E6F3601FDA64F200BA8C73 /* Build configuration list for PBXNativeTarget "CrashDirectoryWatcher" */;
+			buildPhases = (
+				C6E6F3561FDA64F100BA8C73 /* Sources */,
+				C6E6F3571FDA64F100BA8C73 /* Frameworks */,
+				C6E6F3581FDA64F100BA8C73 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CrashDirectoryWatcher;
+			productName = CrashDirectoryWatcher;
+			productReference = C6E6F35A1FDA64F100BA8C73 /* CrashDirectoryWatcher */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -283,6 +334,10 @@
 						ProvisioningStyle = Automatic;
 					};
 					C6B89D271FD5018200AA1652 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					C6E6F3591FDA64F100BA8C73 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 					};
@@ -303,6 +358,7 @@
 			targets = (
 				C6B89D091FD5013800AA1652 /* WXMainThreadLagAnalyzerDemo */,
 				C6B89D271FD5018200AA1652 /* WXMainThreadLagAnalyzer */,
+				C6E6F3591FDA64F100BA8C73 /* CrashDirectoryWatcher */,
 			);
 		};
 /* End PBXProject section */
@@ -369,6 +425,15 @@
 				C6B89D4C1FD5437900AA1652 /* WXLagAnalyzerView.m in Sources */,
 				C6E6F33B1FD6A4B700BA8C73 /* WXCrashReportsList.m in Sources */,
 				C6B89D481FD526BA00AA1652 /* WXLagAnalyzer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6E6F3561FDA64F100BA8C73 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6E6F35D1FDA64F200BA8C73 /* main.m in Sources */,
+				C6E6F3631FDA654200BA8C73 /* MHWDirectoryWatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,6 +662,30 @@
 			};
 			name = Release;
 		};
+		C6E6F35E1FDA64F200BA8C73 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UX84S3N9CU;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C6E6F35F1FDA64F200BA8C73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UX84S3N9CU;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -623,6 +712,15 @@
 			buildConfigurations = (
 				C6B89D311FD5018300AA1652 /* Debug */,
 				C6B89D321FD5018300AA1652 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6E6F3601FDA64F200BA8C73 /* Build configuration list for PBXNativeTarget "CrashDirectoryWatcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6E6F35E1FDA64F200BA8C73 /* Debug */,
+				C6E6F35F1FDA64F200BA8C73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
