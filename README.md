@@ -11,8 +11,9 @@
 参照下面的步骤来安装并使用：  
 
 * 将目录WXMainThreadLagAnalyzer加入到现有的工程里面，目前使用了PLCrashReporter提供的CrashReporter来得到堆栈，如果你的项目里也有这个framework，注意别加重复了。
-* 将symbolicatetool.zip解压到**~/Downloads**目录
-* 将createdsym.py拷贝到项目的工程文件所在的目录，并在Build Phrases的最后，加一个Run Script，内容为:`python ${PROJECT_DIR}/createdsym.py`
+* 将symbolicatetool.zip解压到***~/Downloads***目录
+* 将createdsym.py拷贝到项目的工程文件所在的目录，并在Build Phrases的最后，加一个Run Script，内容为:  
+`python ${PROJECT_DIR}/createdsym.py`
 * 将AutoSymbolicate保存在你喜欢的位置，进入终端，cd到保存位置，运行`./AutoSymbolicate`
 
 # 使用
@@ -49,9 +50,14 @@
 
 ## 3.卡顿出现以后，视图变为红色，此时可以点击进入查看
 ![](https://github.com/buptwsg/WXMainThreadLagAnalyzer/blob/master/Shots/crashlist.PNG)  
+在此界面对一个条目进行左滑操作，可以进行“删除”操作。
 
 ## 4.在卡顿详情页面，点击右上角按钮可以传输到工作电脑上
 ![](https://github.com/buptwsg/WXMainThreadLagAnalyzer/blob/master/Shots/sendtopic.PNG)  
 
 ## 5.将日志存入到~/Downloads/symbolicatetool/crashLog目录
 运行的AutoSymbolicate小程序，将会监控到有日志文件被写入到上述目录，然后自动运行符号化过程。符号化以后的文件保存在~/Downloads/symbolicatetool/symbolicatecrashLog目录，并自动使用文本编辑程序打开，开发者可以直接查看。 
+
+
+# 参考
+[iOS实时卡顿监控](http://www.tanhao.me/code/151113.html/)  
