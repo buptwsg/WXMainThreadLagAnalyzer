@@ -19,15 +19,12 @@ NSString *watchedPath() {
 void handleCrashFile(NSString *filepath) {
     //执行完脚本后，删除文件
     NSString *shellPath = @"./symbolicatecrashtool.sh";
-    NSString *filename = [filepath lastPathComponent];
-    NSString *symbolicatedCrashPath = [NSString stringWithFormat: @"./symbolicatecrashLog/%@", filename];
-    NSString *openCmd = [NSString stringWithFormat: @"open -a TextEdit %@", symbolicatedCrashPath];
-    NSLog(@"openCmd is %@", openCmd);
     
-    NSTask *task = [[NSTask alloc] init];
+    static NSTask *task = nil;
+    task = [[NSTask alloc] init];
     [task setLaunchPath:@"/bin/bash"];
     [task setCurrentDirectoryPath: toolRootPath()];
-    [task setArguments:@[ @"-c", shellPath, openCmd]];
+    [task setArguments:@[ @"-c", shellPath]];
     [task launch];
     [task waitUntilExit];
     
