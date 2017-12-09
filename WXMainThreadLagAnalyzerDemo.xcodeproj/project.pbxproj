@@ -36,7 +36,6 @@
 		C6E6F3441FD6B75A00BA8C73 /* WXCrashReportViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = C6E6F3421FD6B75A00BA8C73 /* WXCrashReportViewer.h */; };
 		C6E6F3451FD6B75A00BA8C73 /* WXCrashReportViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E6F3431FD6B75A00BA8C73 /* WXCrashReportViewer.m */; };
 		C6E6F35D1FDA64F200BA8C73 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E6F35C1FDA64F200BA8C73 /* main.m */; };
-		C6E6F3631FDA654200BA8C73 /* MHWDirectoryWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = C6E6F3621FDA654200BA8C73 /* MHWDirectoryWatcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,8 +106,6 @@
 		C6E6F3431FD6B75A00BA8C73 /* WXCrashReportViewer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXCrashReportViewer.m; sourceTree = "<group>"; };
 		C6E6F35A1FDA64F100BA8C73 /* CrashDirectoryWatcher */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CrashDirectoryWatcher; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E6F35C1FDA64F200BA8C73 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C6E6F3611FDA654200BA8C73 /* MHWDirectoryWatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHWDirectoryWatcher.h; sourceTree = "<group>"; };
-		C6E6F3621FDA654200BA8C73 /* MHWDirectoryWatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHWDirectoryWatcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,8 +234,6 @@
 		C6E6F35B1FDA64F200BA8C73 /* CrashDirectoryWatcher */ = {
 			isa = PBXGroup;
 			children = (
-				C6E6F3611FDA654200BA8C73 /* MHWDirectoryWatcher.h */,
-				C6E6F3621FDA654200BA8C73 /* MHWDirectoryWatcher.m */,
 				C6E6F35C1FDA64F200BA8C73 /* main.m */,
 			);
 			path = CrashDirectoryWatcher;
@@ -433,7 +428,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6E6F35D1FDA64F200BA8C73 /* main.m in Sources */,
-				C6E6F3631FDA654200BA8C73 /* MHWDirectoryWatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,7 +662,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UX84S3N9CU;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -680,7 +674,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UX84S3N9CU;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};

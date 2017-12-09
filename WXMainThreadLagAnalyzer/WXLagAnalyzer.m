@@ -104,7 +104,8 @@
         return;
     }
     
-    NSString *fileName = [NSString stringWithFormat: @"crash-%@.crash", [NSDate date]];
+    NSString *displayName = [[[NSBundle mainBundle] infoDictionary] objectForKey: @"CFBundleName"];
+    NSString *fileName = [NSString stringWithFormat: @"%@-%@.crash", displayName, [NSDate date]];
     fileName = [fileName stringByReplacingOccurrencesOfString: @" " withString: @"-"];
     NSString *filePath = [folder stringByAppendingPathComponent: fileName];
     [report writeToFile: filePath atomically: YES encoding: NSUTF8StringEncoding error: nil];
