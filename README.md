@@ -11,7 +11,7 @@
 参照下面的步骤来安装并使用：  
 
 * 将目录WXMainThreadLagAnalyzer加入到现有的工程里面，目前使用了PLCrashReporter提供的CrashReporter来得到堆栈，如果你的项目里也有这个framework，注意别加重复了。
-* 将symbolicatetool.zip解压到***~/Downloads***目录
+* 将symbolicatetool.zip解压到 **~/Downloads** 目录   
 * 将createdsym.py拷贝到项目的工程文件所在的目录，并在Build Phrases的最后，加一个Run Script，内容为:  
 `python ${PROJECT_DIR}/createdsym.py`
 * 将AutoSymbolicate保存在你喜欢的位置，进入终端，cd到保存位置，运行`./AutoSymbolicate`
